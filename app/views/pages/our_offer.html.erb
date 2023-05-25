@@ -1,0 +1,54 @@
+<div class="nav-bar">
+  <div class="logo-container">
+      <%= image_tag("bc-logo.png", alt: "Bcentred Logo", class: "logo") %>
+  </div>
+</div>
+<div class="main-container">
+  <div class="left-column height-90vh">
+    <div class="about-container height-90vh bg-grey" >
+      <h2>Leadership of growing companies find that continuos success requires personal and professional transformative change.</h2>
+      <h2>Clients are encouraged to be curious, to move between different level of thinking, developing continuos entrepreneurial <br> sucess.</h2>
+    </div>
+  </div>
+  <div class="right-column">
+    <div class="about-container height-90vh bg-green" >
+      <p>Managing such transitions from one stage of growth to the next could hold risk to an organization’s systems, procedures, roles and culture as they need to be reshaped to face new complexities that come with expansion.</p>
+      <p>We at B Centred recognize periods of rapid expansion can be exhilarating, messy, and occasionally perplexing. Dealing with fast and radical changes disorients both individuals and organisations as they work towards their goals.</p>
+      <p>We aim to help leaders and businesses filter the noise to get clarity, figure out when needs to be done and by when, to instil capabilities, processes, and systems. </p>
+      <strong><p>We actively collaborate and support with:</p></strong>
+      <ul class="custom-list">
+        <li>Design (or re-design) business systems and core processes,</li>
+        <li>Find talent and develop internal capabilities,</li>
+        <li>Enhance working practices,</li>
+        <li>And ensure that established culture and values are sustained in the midst of growth.</li>
+      </ul>
+    </div>
+  </div>
+
+  </div>
+</div>
+<script>
+$(document).ready(function(){
+    $('#about-link').click(function(){
+        $('html, body').animate({
+            scrollTop: $('.about-container').offset().top
+        }, 1000); // The number here represents the speed of the scroll in milliseconds
+        return false;
+    });
+});
+$(document).ready(function() {
+    var $link = $('#about-link');
+    var $window = $(window);
+
+    $window.scroll(function() {
+        var scrollPercent = 100 * $window.scrollTop() / ($(document).height() - $window.height());
+        var intScrollPercent = Math.round(scrollPercent);
+
+        $link.css('background', 'linear-gradient(#CCFCFD ' + intScrollPercent + '%, #CCFCFD ' + intScrollPercent + '%, white ' + intScrollPercent + '%)');
+        $link.css('background-clip', 'text');
+        $link.css('-webkit-background-clip', 'text');
+        $link.css('color', 'transparent');
+
+    });
+});
+</script>

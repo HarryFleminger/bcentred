@@ -1,0 +1,29 @@
+.height-90vh {
+  height: 90vh;
+}
+.bg-grey {
+  background-color: #E6E6E6;
+}
+.bg-green {
+  background-color: #CDFFCC;
+  p {
+    font-size: 19px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+  }
+  ul {
+    margin-top: -20px;
+    margin-left: -20px;
+    font-size: 19px;
+  }
+}
+.custom-list {
+  list-style-type: none; /* Remove the default bullet points */
+}
+
+.custom-list li::before {
+  content: "—"; /* Set the bullet point to a hyphen */
+  display: inline-block;
+  width: 1.5em; /* Adjust the width as needed */
+  margin-left: -1em; /* Align the hyphen with the text */
+}
