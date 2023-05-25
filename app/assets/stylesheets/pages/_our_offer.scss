@@ -1,5 +1,17 @@
 .height-90vh {
   height: 90vh;
+  h2 {
+    font-size: 47px;
+  }
+}
+.height-73vh.height-73vh {
+  height: 73vh;
+}
+.height-146vh {
+  height: 146vh;
+}
+.d-none {
+  display: none;
 }
 .bg-grey {
   background-color: #E6E6E6;
@@ -26,4 +38,72 @@
   display: inline-block;
   width: 1.5em; /* Adjust the width as needed */
   margin-left: -1em; /* Align the hyphen with the text */
+}
+.offer-continer {
+  height: 90vh;
+  background-color: #CDFFFF;
+  width: 100%;
+  .offer-grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    height: 100%;
+    width: 100%;
+    line-height: 1.2;
+
+    .horizontal-divider {
+      width: 14%;
+      height: 3px;
+      background-color: black;
+      padding: 0;
+    }
+    .grid-item {
+      display: flex;
+      justify-content: center;
+      align-items: start;
+      flex-direction: column;
+      font-size: 30px;
+      font-weight: 500;
+      color: black;
+      padding-left: 20%;
+      gap: 6%;
+    }
+
+  }
+
+}
+#personal-development {
+  background-color: #AFFFFF;
+}
+#organizational-development {
+  background-color: #CDFFFF;
+}
+#project-managment {
+  background-color: #A4E0E0;
+}
+#training-coaching {
+  background-color: #CDFFCC;
+}
+.offer-quote-container {
+  width: 100%;
+  height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #A4E0E0;
+  h2 {
+    font-size: 32px;
+    font-weight: 500;
+    line-height: 1.3;
+  }
+
+}
+
+.offer-content {
+  height: 100%;
+  padding: 15%;
+  p {
+    margin-bottom:5%;
+  }
 }

@@ -3,14 +3,36 @@
       <%= image_tag("bc-logo.png", alt: "Bcentred Logo", class: "logo") %>
   </div>
 </div>
-<div class="main-container">
+<div class="main-container height-146vh">
   <div class="left-column height-90vh">
     <div class="about-container height-90vh bg-grey" >
       <h2>Leadership of growing companies find that continuos success requires personal and professional transformative change.</h2>
       <h2>Clients are encouraged to be curious, to move between different level of thinking, developing continuos entrepreneurial <br> sucess.</h2>
     </div>
+    <div class="offer-continer height-73vh">
+      <div class="offer-grid">
+        <%= link_to("#", class: "grid-item", id: "personal-development") do %>
+          Personal<br>Development
+          <div class="horizontal-divider"></div>
+        <% end %>
+        <%= link_to("#", class: "grid-item", id: "organizational-development") do %>
+          Organizational<br>Development
+          <div class="horizontal-divider"></div>
+        <% end %>
+
+        <%= link_to("#", class: "grid-item", id: "project-managment") do %>
+          Project<br>Management
+          <div class="horizontal-divider"></div>
+        <% end %>
+
+        <%= link_to("#", class: "grid-item", id: "training-coaching") do %>
+          Training/<br>Coaching
+          <div class="horizontal-divider"></div>
+        <% end %>
+      </div>
+    </div>
   </div>
-  <div class="right-column">
+  <div class="right-column height-90vh">
     <div class="about-container height-90vh bg-green" >
       <p>Managing such transitions from one stage of growth to the next could hold risk to an organization’s systems, procedures, roles and culture as they need to be reshaped to face new complexities that come with expansion.</p>
       <p>We at B Centred recognize periods of rapid expansion can be exhilarating, messy, and occasionally perplexing. Dealing with fast and radical changes disorients both individuals and organisations as they work towards their goals.</p>
@@ -23,32 +45,73 @@
         <li>And ensure that established culture and values are sustained in the midst of growth.</li>
       </ul>
     </div>
+    <div class="offer-quote-container height-73vh">
+      <div class="personal-dev-content offer-content">
+        <strong><p>Personal Development</p></strong>
+        <h2>We work closely with the client to create personalized development structures, that combine a set of tools, services, and providers to form a diverse set of options available in one space. Our sessions are goal focused – keeping the client at the centre, we track their development from now, to wherever they want to get to, creating a path for them to get there.</h2>
+
+      </div>
+      <div class="organizational-dev-content offer-content d-none">
+        <strong><p>Organizational Development</p></strong>
+        <h2>We follow a proven methodology based on practice, experience and behavioral studies that are grounded in making behavioral change stick. This systematically enables better ways of working tailored to unlock the potential of our clients and their people.</h2>
+      </div>
+      <div class="project-managment-content offer-content d-none">
+        <strong><p>Project Managment</p></strong>
+        <h2>Through Project Management, value can be created in various ways: more effective management of end-to-end processes, process improvement to streamline activity, and fundamental redesign that optimizes processes and is better supported by technology. </h2>
+      </div>
+      <div class="training-coaching-content offer-content d-none">
+        <strong><p>Training and Coaching</p></strong>
+        <h2>Our goal here is to change the way people are developed in business - therefore, we aren`t precious about protecting what we know. We want to teach and share our insights so that clients can implement them in new and innovative ways.
+        <br> We use a unique methodology bringing together training, coaching, and mentorship to support your development and ensure it is sustainable.</h2>
+      </div>
+    </div>
   </div>
 
   </div>
 </div>
 <script>
 $(document).ready(function(){
-    $('#about-link').click(function(){
-        $('html, body').animate({
-            scrollTop: $('.about-container').offset().top
-        }, 1000); // The number here represents the speed of the scroll in milliseconds
-        return false;
-    });
+  // When a grid item is clicked.
+  $(".grid-item").click(function(e){
+    e.preventDefault(); // Prevent the default action of the link.
+
+    // The ID of the grid item clicked.
+    let idClicked = $(this).attr('id');
+
+    // Map the idClicked to the relevant class.
+    let classToShow;
+    let idColorToAdd;
+    switch (idClicked) {
+      case 'personal-development':
+        classToShow = 'personal-dev-content';
+        idColorToAdd = "personal-development"
+        break;
+      case 'organizational-development':
+        classToShow = 'organizational-dev-content';
+        idColorToAdd = "organizational-development"
+        break;
+      case 'project-managment':
+        classToShow = 'project-managment-content';
+        idColorToAdd = "project-managment"
+        break;
+      case 'training-coaching':
+        classToShow = 'training-coaching-content';
+        idColorToAdd = "training-coaching"
+        break;
+    }
+
+    // If already visible, no need to do anything more.
+    if(!$("." + classToShow).hasClass('d-none')) {
+      return;
+    }
+
+    // Add d-none to the currently visible content, and then remove d-none from the new content.
+    $(".offer-content").not('.d-none').addClass('d-none');
+    $("." + classToShow).removeClass('d-none');
+    $("." + classToShow).attr("id", idColorToAdd);
+
+  });
 });
-$(document).ready(function() {
-    var $link = $('#about-link');
-    var $window = $(window);
 
-    $window.scroll(function() {
-        var scrollPercent = 100 * $window.scrollTop() / ($(document).height() - $window.height());
-        var intScrollPercent = Math.round(scrollPercent);
 
-        $link.css('background', 'linear-gradient(#CCFCFD ' + intScrollPercent + '%, #CCFCFD ' + intScrollPercent + '%, white ' + intScrollPercent + '%)');
-        $link.css('background-clip', 'text');
-        $link.css('-webkit-background-clip', 'text');
-        $link.css('color', 'transparent');
-
-    });
-});
 </script>
