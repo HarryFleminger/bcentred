@@ -1,12 +1,16 @@
+<div class="nav-bar">
+  <div class="logo-container">
+      <%= image_tag("bc-logo.png", alt: "Bcentred Logo", class: "logo") %>
+  </div>
+</div>
 <div class="main-container">
-
   <div class="left-column">
     <div class="home-nav">
       <div class="links">
         <h3>B-Centred</h2>
-        <%= link_to( "About Us", "#") %> <br>
-        <%= link_to("Our Offer", our_offer_path) %> <br>
-        <%= link_to("Think Tank", blog_posts_path) %>
+        <%= link_to( "About Us", "#", id: "about-link", data: {color: "false"}) %> <br>
+        <%= link_to("Our Offer", our_offer_path, class: "clip-text") %> <br>
+        <%= link_to("Think Tank", blog_posts_path, class: "clip-text") %>
       </div>
       <div class="horizontal-divider"></div>
       <div class="statments">
@@ -23,10 +27,34 @@
       <h1>Helping you <br> B-centred in<br>the midst of <br> uncertainty <br> and change.</h1>
     </div>
 
-    <div class="about-container">
+    <div class="about-container" id="about">
       <h2>Our goal is to reshape ways of working, allowing sustainable expansion through innovation consulting & psychology to grow a successful business.</h2>
       <h2>We listen, support, absorb and then build the tools, processes, and ways of working needed to overcome challenges and reach individual and business goals.</h2>
       </div>
   </div>
-
 </div>
+<script>
+$(document).ready(function(){
+    $('#about-link').click(function(){
+        $('html, body').animate({
+            scrollTop: $('.about-container').offset().top
+        }, 1000); // The number here represents the speed of the scroll in milliseconds
+        return false;
+    });
+});
+$(document).ready(function() {
+    var $link = $('#about-link');
+    var $window = $(window);
+
+    $window.scroll(function() {
+        var scrollPercent = 100 * $window.scrollTop() / ($(document).height() - $window.height());
+        var intScrollPercent = Math.round(scrollPercent);
+
+        $link.css('background', 'linear-gradient(#CCFCFD ' + intScrollPercent + '%, #CCFCFD ' + intScrollPercent + '%, white ' + intScrollPercent + '%)');
+        $link.css('background-clip', 'text');
+        $link.css('-webkit-background-clip', 'text');
+        $link.css('color', 'transparent');
+
+    });
+});
+</script>
