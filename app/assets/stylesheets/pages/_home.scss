@@ -17,17 +17,7 @@ body {
   top: 0;
   left: 0;
 }
-.nav-bar {
-    display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 9%;
-  background-color: rgba(255, 255, 255, 0.363);
-  position: fixed;
-  top: 0;
-  z-index: 1;
-}
+
 a {
   color: black;
   text-decoration: none;
@@ -62,13 +52,13 @@ h1, h2, h3, h4, h5, h6 {
 .home-container {
   background-color: #FEFF99;
   height: 100vh;
-  padding-block: 10%;
-  padding-inline: 20%;
+  padding-block: 10vh;
+  padding-inline: 10vw;
   width: 100%;
-  padding-top: 15%;
+  padding-top: 15vh;
   h1 {
     font-weight: 500;
-    font-size: 93px;
+    font-size: 4.8vw;
     width: fit-content;
     margin-inline: auto;
     line-height: 1.1;
@@ -80,30 +70,31 @@ h1, h2, h3, h4, h5, h6 {
   background-color: #CDFFFF;
   height: 100vh;
   width: 100%;
-  padding-top: 15%;
-  padding-bottom: 5%;
-  padding-inline: 20%;
+  padding-top: 15vh;
+  padding-bottom: 5vh;
+  padding-inline: 9vw;
   h2 {
     font-weight: 500;
-    font-size: 49px;
+    font-size: 2.5vw;
     width: fit-content;
     margin-inline: auto;
-    line-height: 1.15;
+    line-height: 1.11;
   }
   h2:first-of-type {
-    margin-bottom: 34px;
+    margin-bottom: 5vh;
   }
 }
 
 .home-nav {
   width: 100%;
-  padding: 10%;
-  padding-top: 15%;
+  padding: 10vh;
+  padding-top: 15vh;
   display: flex;
   flex-direction: column;
   justify-content: start;
   align-items: start;
-  gap: 45px;
+  gap: 3vh;
+
   position: sticky;
   top: 0;
 
@@ -111,17 +102,22 @@ h1, h2, h3, h4, h5, h6 {
 
 .links {
   h3 {
-    font-size: 52px;
+    font-size: 2.1vw;
     font-weight: 500;
   }
   a {
-    font-size: 47px;
+    font-size: 1.9vw;
     color: white;
     background: white;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     font-weight: 500;
   }
+  #about-link {
+    color: #FEFF99;
+    background-color: #FEFF99;
+  }
+
 }
 
 .horizontal-divider {
@@ -135,6 +131,6 @@ h1, h2, h3, h4, h5, h6 {
 .statments {
   p {
     margin-block: 5px;
-    font-size: 20px;
+    font-size: 1vw;
   }
 }
