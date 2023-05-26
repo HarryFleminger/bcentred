@@ -1,1 +1,18 @@
-  <div class="menu-container"><i class="fa-solid fa-bars"></i></div>
+<div class="nav-bar">
+  <div class="logo-container">
+      <%= image_tag("bc-logo.png", alt: "Bcentred Logo", class: "logo") %>
+  </div>
+  <% if current_page?(our_offer_path) %>
+    <div class="dropdown">
+        <i class="fa-solid fa-bars fa-2xl dropdown-toggle"></i>
+        <div class="dropdown-menu">
+          <div class="links">
+            <%= link_to "Home", root_path, class: "dropdown-links" %> <br>
+            <%= link_to "Our Offer", our_offer_path, class: "dropdown-links" %> <br>
+            <%= link_to "Think Tank", blog_posts_path, class: "dropdown-links" %>
+          </div>
+        </div>
+      </div>
+  <% end %>
+
+</div>

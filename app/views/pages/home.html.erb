@@ -1,28 +1,8 @@
-<div class="nav-bar">
-  <div class="logo-container">
-      <%= image_tag("bc-logo.png", alt: "Bcentred Logo", class: "logo") %>
-  </div>
-</div>
+<%= render "shared/nav_menu" %>
 <div class="main-container">
   <div class="left-column">
-    <div class="home-nav">
-      <div class="links">
-        <h3>B-Centred</h2>
-        <%= link_to( "About Us", "#", id: "about-link", data: {color: "false"}) %> <br>
-        <%= link_to("Our Offer", our_offer_path, class: "clip-text") %> <br>
-        <%= link_to("Think Tank", blog_posts_path, class: "clip-text") %>
-      </div>
-      <div class="horizontal-divider"></div>
-      <div class="statments">
-        <p>Personal Development</p>
-        <u><p>Organizational Development</p></u>
-        <p>Project Management</p>
-        <p>Personal Coaching</p>
-      </div>
-    </div>
-  </div>
+    <%= render "shared/main_nav" %>
   <div class="right-column">
-
     <div class="home-container">
       <h1>Helping you <br> B-centred in<br>the midst of <br> uncertainty <br> and change.</h1>
     </div>
@@ -34,27 +14,24 @@
   </div>
 </div>
 <script>
-$(document).ready(function(){
-    $('#about-link').click(function(){
-        $('html, body').animate({
-            scrollTop: $('.about-container').offset().top
-        }, 1000); // The number here represents the speed of the scroll in milliseconds
-        return false;
-    });
-});
-$(document).ready(function() {
-    var $link = $('#about-link');
-    var $window = $(window);
+  $(document).ready(function(){
+      $('#about-link').click(function(){
+          $('html, body').animate({
+              scrollTop: $('.about-container').offset().top
+          }, 1000); // The number here represents the speed of the scroll in milliseconds
+          return false;
+      });
+      var $link = $('#about-link');
+      var $window = $(window);
 
-    $window.scroll(function() {
-        var scrollPercent = 100 * $window.scrollTop() / ($(document).height() - $window.height());
-        var intScrollPercent = Math.round(scrollPercent);
+      $window.scroll(function() {
+          var scrollPercent = 100 * $window.scrollTop() / ($(document).height() - $window.height());
+          var intScrollPercent = Math.round(scrollPercent);
 
-        $link.css('background', 'linear-gradient(#CCFCFD ' + intScrollPercent + '%, #CCFCFD ' + intScrollPercent + '%, #FEFF99 ' + intScrollPercent + '%)');
-        $link.css('background-clip', 'text');
-        $link.css('-webkit-background-clip', 'text');
-        $link.css('color', 'transparent');
-
-    });
-});
+          $link.css('background', 'linear-gradient(#CCFCFD ' + intScrollPercent + '%, #CCFCFD ' + intScrollPercent + '%, #FEFF99 ' + intScrollPercent + '%)');
+          $link.css('background-clip', 'text');
+          $link.css('-webkit-background-clip', 'text');
+          $link.css('color', 'transparent');
+      });
+  });
 </script>

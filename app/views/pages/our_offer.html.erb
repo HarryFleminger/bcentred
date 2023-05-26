@@ -1,18 +1,4 @@
-<div class="nav-bar">
-  <div class="logo-container">
-      <%= image_tag("bc-logo.png", alt: "Bcentred Logo", class: "logo") %>
-  </div>
-  <div class="dropdown">
-    <i class="fa-solid fa-bars fa-2xl dropdown-toggle"></i>
-    <div class="dropdown-menu">
-      <div class="links">
-        <%= link_to "Home", root_path, class: "dropdown-links" %> <br>
-        <%= link_to "Our Offer", our_offer_path, class: "dropdown-links" %> <br>
-        <%= link_to "Think Tank", blog_posts_path, class: "dropdown-links" %>
-      </div>
-    </div>
-  </div>
-</div>
+<%= render "shared/nav_menu" %>
 <div class="main-container height-146vh">
   <div class="left-column height-90vh">
     <div class="about-container height-90vh bg-grey" >
