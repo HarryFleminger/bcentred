@@ -1,8 +1,8 @@
 <div class="nav-bar">
   <div class="logo-container">
-      <%= image_tag("bc-logo.png", alt: "Bcentred Logo", class: "logo") %>
+    <%= image_tag("bc-logo.png", alt: "Bcentred Logo", class: "logo") %>
   </div>
-  <% if current_page?(our_offer_path) %>
+  <% if current_page?(our_offer_path) || current_page?(new_blog_post_path) %>
     <div class="dropdown">
         <i class="fa-solid fa-bars fa-2xl dropdown-toggle"></i>
         <div class="dropdown-menu">

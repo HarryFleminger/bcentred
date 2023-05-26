@@ -1,4 +1,4 @@
-<div class="blog-img"  style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path @blog_post.photo.key, crop: :fill %>')">
+<div class="blog-card-container"style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path blog_post.photo.key, crop: :fill %>')">
   <div class="blog-card">
     <h4><%= blog_post.title %><br>Jul 25, 2022 - 3 min </h4>
   </div>
