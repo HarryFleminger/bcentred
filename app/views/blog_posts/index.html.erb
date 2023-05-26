@@ -4,7 +4,13 @@
     <%= render "shared/main_nav" %>
   <div class="right-column">
     <div class="blog-container">
-
+      <div class="blog-header">
+        <h4>Think-Tank for all things <br>Creative, innovate and <br>Transformative</h4>
+      </div>
+      <div class="horizontal-divider"></div>
+      <% @blog_posts.each do |blog_post| %>
+      <%= render "shared/blog_index_card", blog_post: blog_post %>
+      <% end %>
     </div>
 
     <div class="" >
