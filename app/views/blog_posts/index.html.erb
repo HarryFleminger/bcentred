@@ -3,11 +3,10 @@
   <div class="left-column-blog" >
     <%= render "shared/main_nav" %>
   <div class="right-column-blog" >
-        <div class="blog-header">
-        <h4>Think-Tank for all things <br>Creative, innovate and <br>Transformative</h4>
-      <div class="horizontal-divider"></div>
-      </div>
-
+    <div class="blog-header">
+      <h4>Think-Tank for all things <br>Creative, innovate and <br>Transformative</h4>
+    <div class="horizontal-divider"></div>
+    </div>
     <div class="blog-container-grid">
       <% @blog_posts.each do |blog_post| %>
         <%= render "shared/blog_index_card", blog_post: blog_post %>

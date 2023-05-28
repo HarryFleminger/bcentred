@@ -40,4 +40,35 @@
   background-blend-mode: revert;
   background-position: center;
   color: white;
+  padding: 5%;
+  * {
+    margin: 0;
+  }
+}
+.horizontal-divider-fw {
+  width: 100%;
+  height: 2px;
+  background-color: #ffffff;
+  margin-block: 2vh;
+}
+.bottom-icons-flex {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1vw;
+}
+.left-icons-flex {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.5vw;
+}
+.icons-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5vw;
 }
