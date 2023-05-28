@@ -1,10 +1,11 @@
-  <div class="blog-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path blog_post.photo.key %>')">
+  <%= link_to(blog_post) do %>
+  <div class="blog-card" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('<%= cl_image_path blog_post.photo.key %>')">
     <div class="top-section">
       <p><%=blog_post.user.first_name%> <%=blog_post.user.last_name%></p>
-      <p><%= blog_post.created_at.strftime("%B %d, %Y") %> - <%= blog_post.minutes_to_read%> min</p>
+      <p><%= blog_post.created_at.strftime("%B %d, %Y") %> • <%= blog_post.minutes_to_read%> min</p>
     </div>
     <div class="bottom-section">
-      <h3><%= blog_post.title %></h3>
+      <h3><%= blog_post.title.truncate(50) %></h3>
       <div class="horizontal-divider-fw"></div>
       <div class="bottom-icons-flex">
         <div class="left-icons-flex">
@@ -14,15 +15,16 @@
           </div>
           <div class="icons-container">
             <i class="fa-regular fa-comment"></i>
+            <p>1</p>
             <%# blog_post.comments.count %>
           </div>
         </div>
         <div class="right-icons-flex">
           <div class="icons-container">
-            <i class="fa-regular fa-heart"></i>
+            <%# <i class="fa-regular fa-heart"></i> %>
           </div>
         </div>
       </div>
-
     </div>
   </div>
+<% end %>

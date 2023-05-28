@@ -23,12 +23,7 @@
   gap: 2vh;
   padding-bottom: 2vh;
 }
-.blog-header {
-  padding-inline: 10vw;
-  padding-top: 15vh;
-  width: 100%;
-  padding-bottom: 1vh;
-}
+
 .blog-card-container {
   width: 100%;
 }
@@ -37,19 +32,34 @@
   width: 30vw;
   height: 30vw;
   background-size: cover;
+  background-blend-mode: overlay;
   background-blend-mode: revert;
   background-position: center;
   color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   padding: 5%;
   * {
     margin: 0;
   }
+  .fa-heart {
+    color: #ff0000bb;
+  }
+  h3 {
+    font-size: 2vw;
+    font-weight: 600;
+  }
+  p {
+    color: rgba(255, 255, 255, 0.909);
+    font-size: 1.1vw;
+  }
 }
 .horizontal-divider-fw {
   width: 100%;
-  height: 2px;
-  background-color: #ffffff;
-  margin-block: 2vh;
+  height: 1.7px;
+  background-color: rgba(255, 255, 255, 0.806);
+  margin-block: 2%;
 }
 .bottom-icons-flex {
   display: flex;
@@ -57,6 +67,7 @@
   justify-content: space-between;
   align-items: center;
   gap: 1vw;
+  margin-top: 3%;
 }
 .left-icons-flex {
   display: flex;
@@ -64,6 +75,7 @@
   justify-content: space-between;
   align-items: center;
   gap: 1.5vw;
+  color: rgba(255, 255, 255, 0.806);
 }
 .icons-container {
   display: flex;
@@ -71,4 +83,13 @@
   justify-content: space-between;
   align-items: center;
   gap: 0.5vw;
+  i {
+    font-size: 1.3vw;
+  }
+}
+#blog-divider {
+  margin-left: 10vw;
+  margin-bottom: 20px;
+  width: 5%;
+  height: 3px;
 }
