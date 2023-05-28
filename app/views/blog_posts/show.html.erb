@@ -1,7 +1,31 @@
 <%= render "shared/nav_menu_dropdown" %>
 <div class="blog-show-container">
   <div class="blog-content">
+      <div class="top-section">
+        <div class="left-icons-flex">
+          <p><%= @blog_post.user.first_name %> <%= @blog_post.user.last_name %></p>
+          <p><%= @blog_post.created_at.strftime("%B %d, %Y") %> • <%= @blog_post.minutes_to_read %> min</p>
+        </div>
+        <div class="right-icons-flex action-buttons-show">
+          <%= link_to edit_blog_post_path(@blog_post) do %>
+            <i class="fa-solid fa-pen-nib"></i>
+          <% end %>
+          <i class="fa-solid fa-ellipsis-vertical" id="copy-link" style="cursor: pointer;"></i>
+        </div>
+      </div>
       <h1><%= @blog_post.title %></h1>
-      <p><%= @blog_post.body %></p>
+      <%= simple_format(@blog_post.body) %>
   </div>
 </div>
+<script>
+document.getElementById('copy-link').addEventListener('click', function() {
+  var dummy = document.createElement('input'),
+  text = window.location.href;
+  document.body.appendChild(dummy);
+  dummy.value = text;
+  dummy.select();
+  document.execCommand('copy');
+  document.body.removeChild(dummy);
+  alert('Link copied to clipboard!');
+});
+</script>

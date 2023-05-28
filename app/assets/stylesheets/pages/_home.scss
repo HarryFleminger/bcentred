@@ -10,7 +10,7 @@ body {
   text-align: left;
 }
 .logo {
-  width: 3.5vw;
+  width: 3.7rem;
 }
 .menu-container {
   position: absolute;
@@ -113,6 +113,7 @@ h1, h2, h3, h4, h5, h6 {
     color: white;
     background: white;
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
     font-weight: 500;
   }
