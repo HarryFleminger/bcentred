@@ -3,6 +3,7 @@
   <%= simple_form_for (@blog_post) do |f| %>
 <%= f.input :title, input_html: { class: 'custom-class-name' } %>
     <%= f.input :body, input_html: { class: 'custom-class-name' } %>
+    <%= f.input :minutes_to_read, input_html: { class: 'custom-class-name' } %>
     <%= f.input :photo, as: :file, input_html: { class: 'custom-class-name' } %>
     <%= f.button :submit, "Create Blog" %>
   <% end %>

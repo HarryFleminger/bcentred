@@ -4,7 +4,7 @@
         <%= link_to( "About Us", "#{current_page?(root_path) ? "#" : "/"}", id: "#{"about-link" if current_page?(root_path)}", data: {color: "false"}) %> <br>
         <%= link_to("Our Offer", our_offer_path, class: "clip-text") %> <br>
         <%= link_to("Think Tank", blog_posts_path, class: "clip-text", id: "#{"color-think-tank" if current_page?(blog_posts_path)}") %>
-        <% if current_page?(blog_posts_path) %>
+        <% if current_page?(blog_posts_path) && current_user.present? && current_user.admin?%>
           <br><%= link_to("Add blog Post", new_blog_post_path, class: "clip-text") %>
         <% end %>
       </div>

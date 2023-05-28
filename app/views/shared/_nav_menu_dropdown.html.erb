@@ -2,7 +2,7 @@
   <div class="logo-container">
     <%= image_tag("bc-logo.png", alt: "Bcentred Logo", class: "logo") %>
   </div>
-  <% if current_page?(our_offer_path) || current_page?(new_blog_post_path) %>
+  <% unless current_page?(root_path) || current_page?(blog_posts_path) %>
     <div class="dropdown">
         <i class="fa-solid fa-bars fa-2xl dropdown-toggle"></i>
         <div class="dropdown-menu">
@@ -16,7 +16,6 @@
             <% else %>
               <%= link_to "Sign In", new_user_session_path, class: "dropdown-links" %>
             <% end %>
-
           </div>
         </div>
       </div>
