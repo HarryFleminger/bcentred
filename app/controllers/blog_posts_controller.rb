@@ -45,17 +45,20 @@ class BlogPostsController < ApplicationController
 
   def like
     @blog_post = BlogPost.find(params[:id])
-    liked_posts = cookies[:liked_posts].to_s.split(",")
 
-    if liked_posts.include?(@blog_post.id.to_s)
-      @blog_post.decrement!(:likes)
-      liked_posts.delete(@blog_post.id.to_s)
+    if cookies["liked_post_#{params[:id]}"].present?
+      @blog_post.likes -= 1
+      @blog_post.likes = 0 if @blog_post.likes < 0  # Add this line
+      cookies.delete "liked_post_#{params[:id]}"
     else
-      @blog_post.increment!(:likes)
-      liked_posts << @blog_post.id.to_s
+      @blog_post.likes += 1
+      cookies["liked_post_#{params[:id]}"] = {
+        value: 'X',
+        expires: 1.year.from_now
+      }
     end
 
-    cookies[:liked_posts] = liked_posts.join(",")
+    @blog_post.save
 
     respond_to do |format|
       format.json { render json: { likes: @blog_post.likes } }

@@ -26,11 +26,12 @@
           </div>
         </div>
         <div class="right-icons-flex">
-          <div class="icons-container" data-controller="like" data-like-id="<%= blog_post.id %>">
-            <i class="fa-solid fa-heart" data-like-target="icon" data-action="click->like#increment"></i>
+          <div class="icons-container" data-controller="like" data-like-id-value="<%= blog_post.id %>">
+            <i class="fa-regular fa-heart" data-like-target="icon" data-action="click->like#increment"></i>
             <p data-like-target="count"><%= blog_post.likes %></p>
           </div>
         </div>
+
       </div>
     <% end %>
     </div>
