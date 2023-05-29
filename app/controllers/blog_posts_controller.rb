@@ -6,6 +6,7 @@ class BlogPostsController < ApplicationController
 
   def show
     @blog_post = BlogPost.find(params[:id])
+    @blog_post.increment!(:views)
   end
 
   def new
@@ -40,6 +41,25 @@ class BlogPostsController < ApplicationController
     @blog_post = BlogPost.find(params[:id])
     @blog_post.destroy
     redirect_to blog_posts_url, :notice => "Successfully destroyed blog post."
+  end
+
+  def like
+    @blog_post = BlogPost.find(params[:id])
+    liked_posts = cookies[:liked_posts].to_s.split(",")
+
+    if liked_posts.include?(@blog_post.id.to_s)
+      @blog_post.decrement!(:likes)
+      liked_posts.delete(@blog_post.id.to_s)
+    else
+      @blog_post.increment!(:likes)
+      liked_posts << @blog_post.id.to_s
+    end
+
+    cookies[:liked_posts] = liked_posts.join(",")
+
+    respond_to do |format|
+      format.json { render json: { likes: @blog_post.likes } }
+    end
   end
 
   private
