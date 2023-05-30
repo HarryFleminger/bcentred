@@ -217,11 +217,16 @@ h1, h2, h3, h4, h5, h6 {
     height:auto;
     width: 100%;
     padding-inline: 22svw;
-    padding-block: 5svh;
+    padding-top: 5svh;
+    padding-bottom: 5svh;
     position: relative;
     h2 {
       margin: 0;
       font-size: 3.5svw;
+    }
+    p:nth-child(1) {
+      // styles here will apply to every p element except the first two
+      margin-top: 0;
     }
   }
 }

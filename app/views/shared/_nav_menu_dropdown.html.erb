@@ -2,8 +2,11 @@
   <div class="logo-container">
     <%= image_tag("bc-logo.png", alt: "Bcentred Logo", class: "logo") %>
   </div>
-  <%# <% unless current_page?(root_path) || current_page?(blog_posts_path) %>
-    <div class="dropdown" id="d-none">
+    <% unless current_page?(root_path) || current_page?(blog_posts_path) %>
+      <div class="dropdown">
+    <% else %>
+      <div class="dropdown" id="d-none">
+    <% end %>
         <i class="fa-solid fa-bars fa-2xl dropdown-toggle"></i>
         <div class="dropdown-menu">
           <div class="links">
