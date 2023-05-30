@@ -28,7 +28,6 @@
   .links {
     padding: 16%;
   }
-
 }
 
 .dropdown-menu .links a {
@@ -39,7 +38,15 @@
 .dropdown-links.dropdown-links {
   background-color: black;
   line-height: 0.9;
-  padding: 5%;
+  padding: 2%;
+  // &:nth-child(n+6) {
+  //   // styles here will apply to every p element except the first two
+  //   margin-top: +8px;
+  //   }
+  &:nth-child(7) {
+  // styles here will apply to every p element except the first two
+  margin-bottom: -15px;
+  }
 }
 .dropdown:hover .dropdown-menu {
   display: block;
