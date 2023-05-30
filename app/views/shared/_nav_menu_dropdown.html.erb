@@ -1,4 +1,4 @@
-<div class="nav-bar">
+<div class="nav-bar" id="<%='background-blog' if params[:controller] == 'blog_posts' && params[:action] == 'show'  %>">
   <div class="logo-container">
     <%= image_tag("bc-logo.png", alt: "Bcentred Logo", class: "logo") %>
   </div>
