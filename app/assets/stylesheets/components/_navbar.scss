@@ -1,3 +1,6 @@
+#d-none {
+  display: none;
+}
 .nav-bar {
   display: flex;
   align-items: center;
@@ -53,4 +56,10 @@
 }
 .profile-links.profile-links {
   background-color:#5ea65d;
+}
+.logo-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 9vh;
 }
