@@ -15,6 +15,10 @@
       </div>
       <h1><%= @blog_post.title %></h1>
       <%= simple_format(@blog_post.body) %>
+      <div class="blog-image-container">
+        <%= cl_image_tag @blog_post.photo.key %>
+      </div>
+
   </div>
 </div>
 <script>

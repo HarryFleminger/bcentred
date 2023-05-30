@@ -62,19 +62,21 @@
   min-height: 100vh;
   display: flex;
   padding-block: 9vh;
-  padding-inline: 15vw;
-  align-items: start;
+  padding-inline: 8vw;
+  justify-content: center;
   background-color: white;
+
   .blog-content {
     padding-block: 2vh;
     padding-inline: 10%;
-    max-width: 980px;
+    max-width: 1200px;
     background-color: white;
-    flex-grow: 1;
-    width: 50%;
+    width: 100%;
+
     display: flex;
     flex-direction: column;
     gap: 2vh;
+
     .blog-title {
       font-size: 4vw;
       font-weight: bold;
@@ -89,11 +91,36 @@
       font-size: 2vw;
     }
     h1 {
-      margin-bottom: 3%;
+      margin-bottom: 2%;
+      font-weight: 500;
+      font-size: 2.8vw;
+      width: fit-content;
+      margin-inline: auto;
+      line-height: 1.3;
+      letter-spacing: 2px;
     }
     p {
       margin-bottom: 1%;
       margin-top: 1%;
+      font-weight: 500;
+      font-size: 1.3vw;
+    }
+    p:nth-child(n+3) {
+      // styles here will apply to every p element except the first two
+      line-height: 1.8;
+    }
+    .blog-image-container {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-block: 2%;
+    }
+    img {
+      width: 80%;
+      height: auto;
+      object-fit: cover;
     }
   }
 }
@@ -123,21 +150,19 @@
 
 .top-section {
   margin-top: 5%;
+  margin-bottom: 1%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  gap: 1vw;
-  i {
-    font-size: 1.3vw;
-    width: 1vw;
-  }
+  gap: 2vw;
+
   .action-buttons-show {
     i {
-      font-size: 16px;
+      font-size: 1.5vw;
       text-align: center;
+      width: 1.3vw;
     }
-    gap: 3vw;
   }
   .right-icons-flex {
     display: flex;
@@ -148,8 +173,7 @@
   }
   p {
     margin: 0;
-  color: rgba(255, 255, 255, 0.909);
-
+    color: rgba(255, 255, 255, 0.909);
   }
   .flex-column {
     flex-direction: column;
@@ -165,4 +189,14 @@
 }
 #background-blog {
   background-color: #CCCC9A;
+}
+.blog-edit-image-container {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  gap: 1%;
+  p {
+    color: #333;
+    margin: 0;
+  }
 }

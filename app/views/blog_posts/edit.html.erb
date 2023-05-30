@@ -5,6 +5,10 @@
     <%= f.input :body, input_html: { class: 'custom-class-name' } %>
     <%= f.input :minutes_to_read, input_html: { class: 'custom-class-name' } %>
     <%= f.input :photo, as: :file, input_html: { class: 'custom-class-name' } %>
+    <div class="blog-edit-image-container">
+      <%= cl_image_tag @blog_post.photo.key, height: 100, width: 100, crop: :fill %>
+      <p>Current Image</p>
+    </div>
     <%= f.button :submit, "Edit Blog" %>
   <% end %>
 </div>
