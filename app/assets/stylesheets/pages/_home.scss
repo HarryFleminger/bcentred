@@ -53,11 +53,11 @@ h1, h2, h3, h4, h5, h6 {
   background-color: #FEFF99;
   height: 100vh;
   padding-block: 10vw;
-  padding-inline: 10vw;
+  padding-inline: 7vw;
   width: 100%;
   padding-top: 15vh;
   h1 {
-    font-weight: 500;
+    font-weight: 400;
     font-size: 4.8vw;
     width: fit-content;
     margin-inline: auto;
@@ -72,9 +72,9 @@ h1, h2, h3, h4, h5, h6 {
   width: 100%;
   padding-top: 15vh;
   padding-bottom: 5vh;
-  padding-inline: 9vw;
+  padding-inline: 7vw;
   h2 {
-    font-weight: 500;
+    font-weight: 400;
     font-size: 2.5vw;
     width: fit-content;
     margin-inline: auto;
@@ -87,7 +87,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .home-nav {
   width: 100%;
-  padding-inline: 10vw;
+  padding-inline: 7vw;
   padding-top: 15vh;
   display: flex;
   flex-direction: column;
@@ -105,8 +105,8 @@ h1, h2, h3, h4, h5, h6 {
 
 .links {
   h3 {
-    font-size: 2.1vw;
-    font-weight: 500;
+    font-size: 2vw;
+    font-weight: 400;
   }
   a {
     font-size: 1.9vw;
@@ -115,7 +115,7 @@ h1, h2, h3, h4, h5, h6 {
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
-    font-weight: 500;
+    font-weight: 400;
   }
   #about-link {
     color: #FEFF99;
@@ -141,7 +141,7 @@ h1, h2, h3, h4, h5, h6 {
 
 
 
-@media screen and (max-width: 820px) {
+@media screen and (max-width: 821px) {
   #d-none {
     display: flex;
   }
@@ -174,7 +174,7 @@ h1, h2, h3, h4, h5, h6 {
     display: block;
     position: absolute;
     top: 5.4svh;
-    left: 10svw;
+    left: 4svw;
     margin: 0;
     font-size: 1.9svw;
   }
@@ -188,12 +188,12 @@ h1, h2, h3, h4, h5, h6 {
   }
   .small-statments {
     display: block;
-    padding-inline: 22svw;
+    padding-inline: 15svw;
     background-color: #E6E6E6;
     padding-block: 5svh;
     p {
       margin: 0;
-      font-size: 3.5svw;
+      font-size: 4svw;
     }
   }
   .logo {
@@ -205,24 +205,23 @@ h1, h2, h3, h4, h5, h6 {
   .home-container{
     height: 100%;
     padding-top: 11svh;
-    padding-inline: 22svw;
+    padding-inline: 15svw;
     padding-block: 12svh;
     padding-bottom: 5svh;
     h1 {
       font-size: 9svw;
     }
   }
-  .about-container {
-    padding-inline: 22svw;
+  .about-container.about-container {
+    padding-inline: 15svw;
     height:auto;
     width: 100%;
-    padding-inline: 22svw;
+    padding-inline: 15svw;
     padding-top: 5svh;
     padding-bottom: 5svh;
     position: relative;
     h2 {
-      margin: 0;
-      font-size: 3.5svw;
+      font-size: 3.4svw;
     }
     p:nth-child(1) {
       // styles here will apply to every p element except the first two
@@ -253,8 +252,4 @@ h1, h2, h3, h4, h5, h6 {
       font-size: 4.8svw;
     }
   }
-}
-
-@media screen and (max-width: 820px) {
-
 }

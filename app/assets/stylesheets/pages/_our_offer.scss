@@ -127,8 +127,11 @@
   .d-none {
     display: block;
   }
-  .revealed-about {
-    padding-top: 14svh;
+  .revealed-about.revealed-about {
+    padding-top: 13svh;
+    h2 {
+      font-weight: 500;
+    }
   }
   .height-73vh.height-73vh {
     height: auto;
@@ -140,7 +143,7 @@
     h2 {
       font-size: 3svw;
       margin: 0;
-      font-weight: 600;
+      font-weight: 400;
       line-height: 1.2;
     }
   }
@@ -157,10 +160,13 @@
     background-color: #AFFFFF;
   }
   .offer-content {
-    padding-inline: 22svw;
+    padding-inline: 15svw;
     padding-block: 5svh;
     h2 {
       font-size: 2.5svw;
+    }
+    p {
+      margin-top: 0;
     }
   }
 }
