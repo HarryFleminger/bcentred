@@ -1,25 +1,30 @@
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Admin?</th>
-      <th>Actions</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @users.each do |user| %>
-      <tr>
-        <td><%= user.first_name %></td>
-        <td><%= user.admin? ? 'Yes' : 'No' %></td>
-        <td>
-          <% unless user.admin? %>
-            <%= button_to 'Make Admin', make_admin_user_path(user), method: :put %>
-          <% else %>
-            <%= button_to 'Remove Admin', remove_admin_user_path(user), method: :put %>
-          <% end %>
-          <%= link_to 'Destroy User', destroy_user_path(user), data: {turbo_method: :delete, turbo_confirm: "Are you sure!? ALL BLOG POSTS MADE BY #{user.first_name.upcase} WILL BE PERMANENTLY DELETED "}  %>
-        </td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<div class="background-black">
+  <%= render "shared/nav_menu_dropdown" %>
+  <div class="custom-class-name ">
+    <table class="styled-table">
+      <thead>
+        <tr>
+          <th class="styled-th">Name</th>
+          <th class="styled-th">Admin?</th>
+          <th class="styled-th">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @users.each do |user| %>
+          <tr class="styled-tr">
+            <td class="styled-td"><%= user.first_name %> <%= user.last_name %></td>
+            <td class="styled-td"><strong><%= user.admin? ? 'Yes' : 'No' %></strong></td>
+            <td class="styled-td td-flex">
+              <% unless user.admin? %>
+                <%= button_to 'Make Admin', make_admin_user_path(user), method: :put, class: "btn" %>
+              <% else %>
+                <%= button_to 'Remove Admin', remove_admin_user_path(user), method: :put, class: "btn " %>
+              <% end %>
+              <%= link_to 'Destroy User', destroy_user_path(user), data: {turbo_method: :delete, turbo_confirm: "Are you sure!? ALL BLOG POSTS MADE BY #{user.first_name.upcase} WILL BE PERMANENTLY DELETED "}, class: "btn red" %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>

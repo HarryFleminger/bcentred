@@ -1,10 +1,11 @@
 class UsersController < ApplicationController
 
   before_action :check_if_owner, only: [:index]
-
   def index
-    @users = User.all
+    @users = User.where(owner: false).order(:first_name)
   end
+
+
 
   def destroy
     @user = User.find(params[:id])
