@@ -1,0 +1,25 @@
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Admin?</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= user.first_name %></td>
+        <td><%= user.admin? ? 'Yes' : 'No' %></td>
+        <td>
+          <% unless user.admin? %>
+            <%= button_to 'Make Admin', make_admin_user_path(user), method: :put %>
+          <% else %>
+            <%= button_to 'Remove Admin', remove_admin_user_path(user), method: :put %>
+          <% end %>
+          <%= link_to 'Destroy User', destroy_user_path(user), data: {turbo_method: :delete, turbo_confirm: "Are you sure!? ALL BLOG POSTS MADE BY #{user.first_name.upcase} WILL BE PERMANENTLY DELETED "}  %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
