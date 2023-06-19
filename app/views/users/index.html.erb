@@ -10,19 +10,23 @@
         </tr>
       </thead>
       <tbody>
-        <% @users.each do |user| %>
-          <tr class="styled-tr">
-            <td class="styled-td"><%= user.first_name %> <%= user.last_name %></td>
-            <td class="styled-td"><strong><%= user.admin? ? 'Yes' : 'No' %></strong></td>
-            <td class="styled-td td-flex">
-              <% unless user.admin? %>
-                <%= button_to 'Make Admin', make_admin_user_path(user), method: :put, class: "btn" %>
-              <% else %>
-                <%= button_to 'Remove Admin', remove_admin_user_path(user), method: :put, class: "btn " %>
-              <% end %>
-              <%= link_to 'Destroy User', destroy_user_path(user), data: {turbo_method: :delete, turbo_confirm: "Are you sure!? ALL BLOG POSTS MADE BY #{user.first_name.upcase} WILL BE PERMANENTLY DELETED "}, class: "btn red" %>
-            </td>
-          </tr>
+        <% if @users.length == 1 %>
+          <h1> There are no other users in the Database </h1>
+          <% else %>
+            <% @users.each do |user| %>
+              <tr class="styled-tr">
+                <td class="styled-td"><%= user.first_name %> <%= user.last_name %></td>
+                <td class="styled-td"><strong><%= user.admin? ? 'Yes' : 'No' %></strong></td>
+                <td class="styled-td td-flex">
+                  <% unless user.admin? %>
+                    <%= button_to 'Make Admin', make_admin_user_path(user), method: :put, class: "btn" %>
+                  <% else %>
+                    <%= button_to 'Remove Admin', remove_admin_user_path(user), method: :put, class: "btn " %>
+                  <% end %>
+                  <%= link_to 'Destroy User', destroy_user_path(user), data: {turbo_method: :delete, turbo_confirm: "Are you sure!? ALL BLOG POSTS MADE BY #{user.first_name.upcase} WILL BE PERMANENTLY DELETED "}, class: "btn red" %>
+                </td>
+              </tr>
+            <% end %>
         <% end %>
       </tbody>
     </table>
