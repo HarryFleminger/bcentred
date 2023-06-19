@@ -10,7 +10,7 @@
         </tr>
       </thead>
       <tbody>
-        <% if @users.length == 1 %>
+        <% if @users.length == 0 %>
           <h1> There are no other users in the Database </h1>
           <% else %>
             <% @users.each do |user| %>
