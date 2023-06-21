@@ -2,7 +2,7 @@
 <div class="main-container-blog">
   <div class="left-column-blog" >
     <%= render "shared/main_nav" %>
-  <div class="right-column-blog" >
+  <div class="right-column-blog" id="contact-page">
    <div class="">
       <%= simple_form_for @contact_message do |f| %>
         <%= f.input :name, label: "Name", required: true %>

@@ -1,5 +1,4 @@
 class ContactMessagesController < ApplicationController
-  skip_before_action :authenticate_user!
   def new
     @contact_message = ContactMessage.new
   end
