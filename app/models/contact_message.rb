@@ -1,3 +1,3 @@
 class ContactMessage < ApplicationRecord
-  validates :name, :email, :subject, :message, presence: true
+  validates :name, :email, :message, presence: true
 end

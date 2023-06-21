@@ -3,4 +3,18 @@
   bottom: 16px;
   right: 16px;
   z-index: 1000;
+  background-color: orange;
+  width: fit-content;
+  height: fit-content;
+}
+.error {
+  position: fixed;
+  right: 10vw;
+  color: red;
+  margin-top: 7px;
+  opacity: 1;
+  transition: opacity 2s ease-out;
+}
+.error.fade-out {
+  opacity: 0;
 }

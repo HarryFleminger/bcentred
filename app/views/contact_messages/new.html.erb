@@ -3,16 +3,20 @@
   <div class="left-column-blog" >
     <%= render "shared/main_nav" %>
   <div class="right-column-blog" id="contact-page">
-   <div class="">
+    <h2 class="contact-header">Get in touch, we'd love <br> to hear from you.</h2>
+   <div class="contact-form-container">
       <%= simple_form_for @contact_message do |f| %>
-        <%= f.input :name, label: "Name", required: true %>
-        <%= f.input :email, label: "Email", required: true %>
-        <%= f.input :phone, label: "Phone" %>
-        <br>
-        <%= f.input :subject, label: "Subject", required: true %>
-        <%= f.input :message, label: "Message", as: :text, required: true, class: "width-100p" %>
-        <%= f.submit "Send", class: "add-to-basket-button", id: "basket-next-button" %>
+        <%= f.input :name, label: false, placeholder: 'Name', required: false %>
+        <%= f.input :email, label: false, placeholder: 'Email', required: false %>
+        <%= f.input :phone, label: false, placeholder: 'Phone (optional)' %>
+        <%= f.input :subject, label: false, placeholder: 'Subject (optional)', required: false %>
+        <%= f.input :message, label: false, as: :text, required: false, id: "message-height" %>
+        <%= f.submit "Submit",label: false, class: "", id: "contact-form-submit" %>
       <% end %>
     </div>
   </div>
 </div>
+<script>
+const errorElement = document.querySelector('.error');
+errorElement.classList.add('fade-out');
+</script>
