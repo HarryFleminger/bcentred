@@ -2,8 +2,9 @@
       <div class="links">
         <h3>B-Centred</h3>
         <%= link_to( "About Us", "#{current_page?(root_path) ? "#" : "/"}", id: "#{"about-link" if current_page?(root_path)}", data: {color: "false"}) %> <br>
-        <%= link_to("Our Offer", our_offer_path, class: "clip-text") %> <br>
-        <%= link_to("Think Tank", blog_posts_path, class: "clip-text", id: "#{"color-think-tank" if current_page?(blog_posts_path)}") %>
+        <%# < link_to("Our Offer", our_offer_path, class: "clip-text") %>
+        <%= link_to("Think Tank", blog_posts_path, class: "clip-text", id: "#{"color-think-tank" if current_page?(blog_posts_path)}") %> <br>
+        <%= link_to("Contact", new_contact_message_path, class: "clip-text") %>
         <% if current_page?(blog_posts_path) && current_user.present? && current_user.admin?%>
             <% if current_user.owner? %>
               <br><%= link_to "User Dashbaord", users_path, class: "clip-text" %>
@@ -12,11 +13,11 @@
         <% end %>
       </div>
       <div class="horizontal-divider"></div>
-      <div class="statments">
+      <%# <div class="statments">
         <p>Personal Development</p>
         <u><p>Organizational Development</p></u>
         <p>Project Management</p>
         <p>Personal Coaching</p>
-      </div>
+      </div> %>
     </div>
   </div>

@@ -3,6 +3,7 @@ Rails.application.routes.draw do
     sessions: 'sessions',
     registrations: 'registrations'
   }
+  resources :contact_messages, only: [:new, :create]
   resources :users, only: [:index] do
     member do
       put 'make_admin', to: 'owner#make_admin'
