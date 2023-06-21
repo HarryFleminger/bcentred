@@ -12,11 +12,10 @@
         <%= f.input :subject, label: false, placeholder: 'Subject (optional)', required: false %>
         <%= f.input :message, label: false, as: :text, required: false, id: "message-height" %>
         <%= f.submit "Submit",label: false, class: "", id: "contact-form-submit" %>
+        <div class="arrow-container">
+          <%= image_tag("right-arrow.png", alt: "Left submit image", class: "right-arrow-submit") %>
+        </div>
       <% end %>
     </div>
   </div>
 </div>
-<script>
-const errorElement = document.querySelector('.error');
-errorElement.classList.add('fade-out');
-</script>
