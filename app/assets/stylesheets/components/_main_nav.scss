@@ -1,0 +1,25 @@
+.who-we-are-link-container {
+  position: relative;
+}
+.add-new-employee-button {
+  position: absolute;
+  width: 3vw;
+
+  right: -3.5vw;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  img {
+    width: 100%;
+    a {
+      width: 100%;
+      position: inherit;
+    }
+  }
+}
+.add-employee-link.add-employee-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
