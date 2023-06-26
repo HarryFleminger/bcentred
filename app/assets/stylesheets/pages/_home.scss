@@ -111,8 +111,8 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: 400;
   }
   a {
-    // font-size: 1.9vw;
-    font-size: clamp(1.5rem, 2.5vw, 4vw);
+    font-size: 1.9vw;
+    // font-size: clamp(1.5rem, 2.5vw, 2.5vw);
     color: white;
     background: white;
     -webkit-background-clip: text;
