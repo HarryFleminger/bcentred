@@ -5,7 +5,7 @@
         <%# < link_to("Our Offer", our_offer_path, class: "clip-text") %>
         <div class="who-we-are-link-container">
           <%= link_to("Who We Are", employees_path, class: "clip-text", id: "#{"color-who-we-are" if current_page?(employees_path)}") %><br>
-          <% if current_page?(employees_path) || current_page?(new_employee_path) && current_user.present? && current_user.owner?%>
+          <% if current_user.present? && current_user.owner?%>
             <div class="add-new-employee-button">
               <%= link_to  new_employee_path, class: "add-employee-link" do %>
                 <% if current_page?(employees_path) %>
