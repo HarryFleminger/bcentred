@@ -1,0 +1,12 @@
+<div class="centering-container">
+  <div class="employee_card_container">
+    <%= cl_image_tag employee.photo.key %>
+    <div class="employee_card_text_container">
+      <div class="top">
+      <h3><%= employee.first_name %> <%= employee.last_name %></h3>
+      <p><%= employee.position %></p>
+      </div>
+      <p><%= employee.bio %></p>
+    </div>
+  </div>
+</div>

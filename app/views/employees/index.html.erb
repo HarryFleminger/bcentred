@@ -4,7 +4,10 @@
     <%= render "shared/main_nav" %>
   <div class="right-column-blog" id="who-we-are-page">
     <h2 class="contact-header">Who We Are</h2>
-    <div class="contact-form-container">
+    <div class="who-we-are-grid">
+      <% @employees.each do |employee| %>
+        <%= render "shared/employee_index_card", employee: employee %>
+      <% end %>
     </div>
   </div>
 </div>
