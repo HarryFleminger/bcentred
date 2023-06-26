@@ -207,7 +207,23 @@
   }
 }
 
-@media screen and (max-width: 820px) {
+@media screen and (max-width: 1100px) {
+
+  .employee_card_container.employee_card_container {
+    img {
+      width: 30svw;
+      height: 30svw;
+    }
+
+  }
+  #who-we-are-page {
+    .contact-header.contact-header {
+      margin-left: 4svw;
+    }
+  }
+  .contact-header.contact-header {
+    font-size: 4svw;
+  }
   .blog-content {
     padding-inline: 10%;
 

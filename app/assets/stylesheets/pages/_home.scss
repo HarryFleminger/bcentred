@@ -111,7 +111,8 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: 400;
   }
   a {
-    font-size: 1.9vw;
+    // font-size: 1.9vw;
+    font-size: clamp(1.5rem, 2.5vw, 4vw);
     color: white;
     background: white;
     -webkit-background-clip: text;
@@ -148,7 +149,7 @@ h1, h2, h3, h4, h5, h6 {
     display: flex;
   }
   .dropdown {
-    height: 9svh; /* vh instead of svh */
+    height: 8svh; /* vh instead of svh */
     left: 10svw; /* vw instead of svw */
     top: 0;
     flex-direction: column;
