@@ -5,26 +5,40 @@
         <%# < link_to("Our Offer", our_offer_path, class: "clip-text") %>
         <div class="who-we-are-link-container">
           <%= link_to("Who We Are", employees_path, class: "clip-text", id: "#{"color-who-we-are" if current_page?(employees_path)}") %><br>
-          <div class="add-new-employee-button">
-            <%= link_to  new_employee_path, class: "add-employee-link" do %>
-              <% if current_page?(employees_path) %>
-                  <%= image_tag("plus-white.png", alt: "Add employee", class: "") %>
-                <% elsif current_page?(new_employee_path)%>
-                  <%= image_tag("plus.png", alt: "Add employee", class: "") %>
+          <% if current_page?(employees_path) && current_user.present? && current_user.admin?%>
+            <div class="add-new-employee-button">
+              <%= link_to  new_employee_path, class: "add-employee-link" do %>
+                <% if current_page?(employees_path) %>
+                    <%= image_tag("plus-white.png", alt: "Add employee", class: "") %>
+                  <% elsif current_page?(new_employee_path)%>
+                    <%= image_tag("plus.png", alt: "Add employee", class: "") %>
+                <% end %>
               <% end %>
-            <% end %>
-          </div>
+            </div>
+          <% end %>
         </div>
-        <%= link_to("Think Tank", blog_posts_path, class: "clip-text", id: "#{"color-think-tank" if current_page?(blog_posts_path)}") %> <br>
+        <div class="who-we-are-link-container">
+          <%= link_to("Think Tank", blog_posts_path, class: "clip-text", id: "#{"color-think-tank" if current_page?(blog_posts_path)}") %> <br>
+          <% if current_page?(blog_posts_path) && current_user.present? && current_user.admin?%>
+            <div class="add-new-employee-button" id="add-blog-button">
+              <%= link_to  new_blog_post_path, class: "add-employee-link" do %>
+                <% if current_page?(blog_posts_path) %>
+                    <%= image_tag("plus-white.png", alt: "Add employee", class: "") %>
+                <% end %>
+              <% end %>
+            </div>
+          <% end %>
+        </div>
         <%= link_to("Contact", new_contact_message_path, class: "clip-text", id: "#{"color-contact" if current_page?(new_contact_message_path)}") %>
-        <% if current_page?(blog_posts_path) && current_user.present? && current_user.admin?%>
-            <% if current_user.owner? %>
-              <br><%= link_to "User Dashbaord", users_path, class: "clip-text" %>
-            <% end %>
-          <br><%= link_to("Add blog post", new_blog_post_path, class: "clip-text") %>
-        <% end %>
+
       </div>
       <div class="horizontal-divider"></div>
+
+      <div class="links">
+        <% if current_user.present? && current_user.owner?%>
+          <%= link_to "Admin Dashbaord", users_path, class: "owner-buttons" %>
+        <% end %>
+      </div>
       <%# <div class="statments">
         <p>Personal Development</p>
         <u><p>Organizational Development</p></u>
