@@ -3,6 +3,7 @@ class UsersController < ApplicationController
   before_action :check_if_owner, only: [:index]
   def index
     @users = User.where(owner: false).order(:first_name)
+    @employees = Employee.all
   end
 
 

@@ -4,6 +4,7 @@
   <% if @users.length == 0 %>
     <h1 class="no-users"> There are no other users in the Database </h1>
     <% else %>
+    <h1> User Dash </h1>
     <table class="styled-table">
       <thead>
         <tr>
@@ -13,7 +14,6 @@
         </tr>
       </thead>
       <tbody>
-
             <% @users.each do |user| %>
               <tr class="styled-tr">
                 <td class="styled-td"><%= user.first_name %> <%= user.last_name %></td>
@@ -32,4 +32,3 @@
       </tbody>
     </table>
   </div>
-</div>
