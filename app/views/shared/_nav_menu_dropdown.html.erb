@@ -15,6 +15,7 @@
             <%= link_to "B—Centred", root_path, class: "dropdown-links" %> <br>
             <%= link_to "Who We Are", employees_path, class: "dropdown-links" %> <br>
             <%= link_to "Think Tank", blog_posts_path, class: "dropdown-links" %><br>
+            <%= link_to "Contact", new_contact_message_path, class: "dropdown-links" %><br>
             <div class="profile-links-container">
               <% if user_signed_in? %>
                 <%= link_to "Edit Profile", edit_user_registration_path, class: "dropdown-links profile-links" %> <br>

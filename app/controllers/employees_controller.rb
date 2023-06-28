@@ -20,7 +20,7 @@ class EmployeesController < ApplicationController
   def destroy
     @employee = Employee.find(params[:id])
     @employee.destroy
-    redirect_to root_path
+    redirect_to employees_path
   end
 
   def edit
@@ -30,7 +30,7 @@ class EmployeesController < ApplicationController
   def update
     @employee = Employee.find(params[:id])
     if @employee.update(employee_params)
-    redirect_to root_path
+    redirect_to employees_path
     else
       render :edit, status: :unprocessable_entity
     end
