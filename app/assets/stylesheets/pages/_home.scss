@@ -254,3 +254,29 @@ h1, h2, h3, h4, h5, h6 {
     }
   }
 }
+
+@media screen and (max-width: 421px) {
+  #who-we-are-grid {
+    gap: 5px;
+  }
+  #who-we-are-page#who-we-are-page {
+    padding-inline: 3vw;
+    .contact-header.contact-header.contact-header.contact-header {
+      margin-left: 1svw;
+    }
+
+  }
+  .employee_card_container {
+    width: 100%;
+  }
+  .contact-header.contact-header.contact-header.contact-header {
+    font-size: 6svw;
+
+  }
+  .employee_card_container.employee_card_container.employee_card_container.employee_card_container {
+    img{
+      width: 45svw;
+      height: 45svw;
+    }
+  }
+}
