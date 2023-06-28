@@ -1,5 +1,6 @@
 <%= render "shared/nav_menu_dropdown" %>
 <div class="new-blog-container">
+
   <%= simple_form_for (@blog_post) do |f| %>
     <%= f.input :title, input_html: { class: 'custom-class-name' } %>
     <%= f.input :body, input_html: { class: 'custom-class-name' } %>
@@ -11,4 +12,7 @@
     </div>
     <%= f.button :submit, "Edit Blog" %>
   <% end %>
+    <%=link_to blog_post_path, data: {turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this blog post?"}, class: "btn btn-outline-warning bottom-1 end-1 ", id: "delete-btn" do %>
+      <i class="fa-solid fa-trash"></i>
+    <% end %>
 </div>

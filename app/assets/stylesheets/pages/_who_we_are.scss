@@ -12,12 +12,59 @@
       margin-left: 2vw;
     }
 }
+.edit_employee {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  gap: 10px;
+
+  .blog-edit-image-container.blog-edit-image-container {
+    margin-top: 34px;
+    margin-left: 10px;
+   }
+  ::placeholder {
+    color: black;
+    font-family: 'poppins', sans-serif;
+  }
+
+  .input {
+    color: black;
+    font-family: 'poppins', sans-serif;
+  }
+
+  .optional {
+    width: 100%;
+    height: 38px;
+    border: none;
+    padding: 10px;
+    font-size: 14px;
+    color: black;
+    font-family: 'poppins', sans-serif;
+  }
+  .btn {
+    margin-top: 37px;
+
+  }
+  .employee_photo {
+    margin-left: 10px;
+    padding: 0;
+    width: 96%;
+    margin-top: 10px;
+    background-color: white;
+    padding-block: 7px;
+  }
+  .push-down-submit {
+    background-color: white;
+  }
+}
 .new_employee {
   display: flex;
   flex-direction: column;
   justify-content: center;
   width: 100%;
   gap: 10px;
+
 
   ::placeholder {
     color: black;

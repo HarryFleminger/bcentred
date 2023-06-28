@@ -1,6 +1,11 @@
 <div class="centering-container">
   <div class="employee_card_container">
     <%= cl_image_tag employee.photo.key %>
+    <% if current_user.present? && current_user.owner? %>
+    <%= link_to edit_employee_path(employee) do %>
+            <i class="fa-solid fa-pen-nib"></i>
+          <% end %>
+    <% end %>
     <div class="employee_card_text_container">
       <div class="top">
       <h3><%= employee.first_name %> <%= employee.last_name %></h3>

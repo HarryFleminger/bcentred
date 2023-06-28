@@ -1,0 +1,25 @@
+<%= render "shared/nav_menu_dropdown" %>
+<div class="main-container-blog">
+  <div class="left-column-blog" >
+    <%= render "shared/main_nav" %>
+  <div class="right-column-blog" id="employee-edit-page">
+    <h2 class="contact-header">Edit <%= @employee.first_name %>'s details</h2>
+   <div class="contact-form-container">
+    <%= simple_form_for (@employee) do |f| %>
+      <%= f.input :first_name, label: false, placeholder: 'First Name', required: false %>
+      <%= f.input :last_name, label: false, placeholder: 'Last Name', required: false %>
+      <%= f.input :position, label: false, placeholder: 'Employee position', required: false %>
+      <%= f.input :bio, label: false, placeholder: 'Bio', required: false %>
+      <%= f.input :photo, as: :file, input_html: { class: 'push-down-submit' } %>
+          <div class="blog-edit-image-container">
+      <%= cl_image_tag @employee.photo.key, height: 100, width: 100, crop: :fill %>
+      <p>Current Image</p>
+    </div>
+      <%= f.button :submit, "Update Employee" %>
+    <% end %>
+        <%=link_to employee_path, data: {turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this employee?"}, class: "btn btn-outline-warning bottom-1 end-1 ", id: "delete-btn" do %>
+      <i class="fa-solid fa-trash"></i>
+    <% end %>
+    </div>
+  </div>
+</div>

@@ -7,8 +7,10 @@
           <p><%= @blog_post.created_at.strftime("%B %d, %Y") %> • <%= @blog_post.minutes_to_read %> min</p>
         </div>
         <div class="right-icons-flex action-buttons-show">
+          <% if current_user.present? && current_user.admin? %>
           <%= link_to edit_blog_post_path(@blog_post) do %>
             <i class="fa-solid fa-pen-nib"></i>
+          <% end %>
           <% end %>
           <i class="fa-solid fa-ellipsis-vertical" id="copy-link" style="cursor: pointer;"></i>
         </div>
