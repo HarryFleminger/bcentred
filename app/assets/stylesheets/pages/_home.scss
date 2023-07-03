@@ -150,7 +150,7 @@ h1, h2, h3, h4, h5, h6 {
   }
   .dropdown {
     height: 8svh; /* vh instead of svh */
-    left: 10svw; /* vw instead of svw */
+    left: 8svw; /* vw instead of svw */
     top: 0;
     flex-direction: column;
     justify-content: center;
@@ -158,12 +158,7 @@ h1, h2, h3, h4, h5, h6 {
   .dropdown .fa-2xl {
     font-size: 1.5em;
   }
-  .dropdown-menu {
 
-  }
-  .dropdown:hover {
-
-  }
   .main-container {
     height:auto;
     width: 100%;
