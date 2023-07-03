@@ -217,7 +217,7 @@ h1, h2, h3, h4, h5, h6 {
     padding-inline: 15svw;
     height:auto;
     width: 100%;
-    padding-inline: 15svw;
+    padding-inline: 16svw;
     padding-top: 5svh;
     padding-bottom: 5svh;
     position: relative;
@@ -256,13 +256,17 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 @media screen and (max-width: 421px) {
-  #who-we-are-grid {
-    gap: 5px;
+  .who-we-are-grid {
+    gap: 25px;
+    grid-template-columns: 1fr;
+  }
+  #contact-page#contact-page {
+    padding-inline: 13vw;
   }
   #who-we-are-page#who-we-are-page {
-    padding-inline: 3vw;
+    padding-inline: 15.5vw;
     .contact-header.contact-header.contact-header.contact-header {
-      margin-left: 1svw;
+      margin-left: 0svw;
     }
 
   }
@@ -275,8 +279,8 @@ h1, h2, h3, h4, h5, h6 {
   }
   .employee_card_container.employee_card_container.employee_card_container.employee_card_container {
     img{
-      width: 45svw;
-      height: 45svw;
+      width: 71svw;
+      height: 71svw;
     }
   }
 }
